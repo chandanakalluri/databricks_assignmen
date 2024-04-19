@@ -50,14 +50,6 @@ def add_current_date(df):
 
 # COMMAND ----------
 
-def write_delta_table(df, database, table, primary_key, path):
-    spark.sql(f"CREATE DATABASE IF NOT EXISTS {database}")
-    df.write.format("delta") \
-        .mode("overwrite") \
-        .option("mergeSchema", "true") \
-        .option("path", path) \
-        .saveAsTable(f"{database}.{table}")
-    
-    return df
+
 
 
