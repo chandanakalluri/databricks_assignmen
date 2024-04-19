@@ -37,13 +37,10 @@ employee_with_date_df.display()
 employee_with_date_df.write.format("delta").mode("overwrite").option("replaceWhere", "load_date >= '2024-04-16'")\
 .save("/FileStore/assignments/gold/employee/table_name")
 
-# COMMAND ----------
-
-test_df = spark.read.format('delta').load('dbfs:/FileStore/assignment/gold/employee/table_name/')
-
-# COMMAND ----------
 
 
 
-# COMMAND ----------
+
+
+
 
